@@ -112,7 +112,7 @@ const updatePost = async (req, res, next) => {
             );
         }
 
-        if (post.author.toString() !== req.user._id.toString()) {
+        if (post.author._id.toString() !== req.user._id.toString()) {
             return next(
                 createError("Forbidden", 403)
             );
@@ -142,7 +142,7 @@ const deletePost = async (req, res, next) => {
             );
         }
 
-        if (post.author.toString() !== req.user._id.toString()) {
+        if (post.author._id.toString() !== req.user._id.toString()) {
             return next(
                 createError("Forbidden", 403)
             );
